@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>UM.vue</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #cc7832; font-weight: bold;}
+.s5 { color: #cc7832;}
+.s6 { color: #6a8759;}
+.s7 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UM.vue</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;template&gt;</span>
+&lt;el-table
+  <span class="s2">:data=</span><span class="s3">&quot;</span><span class="s1">tableData</span><span class="s3">&quot;</span>
+  <span class="s2">border</span>
+  style=<span class="s3">&quot;width: 100%&quot;</span><span class="s0">&gt;</span>
+&lt;el-table-column
+  <span class="s2">fixed</span>
+  prop=<span class="s3">&quot;date&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;日期&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;150&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">prop=</span><span class="s3">&quot;name&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;姓名&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;120&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">prop=</span><span class="s3">&quot;province&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;省份&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;120&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">prop=</span><span class="s3">&quot;city&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;市区&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;120&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">prop=</span><span class="s3">&quot;address&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;地址&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;300&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">prop=</span><span class="s3">&quot;zip&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;邮编&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;120&quot;</span><span class="s0">&gt;</span>
+&lt;/el-table-column&gt;
+&lt;el-table-column
+  <span class="s2">fixed=</span><span class="s3">&quot;right&quot;</span>
+  <span class="s2">label=</span><span class="s3">&quot;操作&quot;</span>
+  <span class="s2">width=</span><span class="s3">&quot;100&quot;</span><span class="s0">&gt;</span>
+&lt;template <span class="s2">slot-scope=</span><span class="s3">&quot;scope&quot;</span><span class="s0">&gt;</span>
+  &lt;el-button <span class="s2">@click=</span><span class="s3">&quot;</span><span class="s1">handleClick(scope.row)</span><span class="s3">&quot; </span><span class="s2">type=</span><span class="s3">&quot;text&quot; </span><span class="s2">size=</span><span class="s3">&quot;small&quot;</span><span class="s0">&gt;</span><span class="s1">查看</span><span class="s0">&lt;/el-button&gt;</span>
+  &lt;el-button <span class="s2">type=</span><span class="s3">&quot;text&quot; </span><span class="s2">size=</span><span class="s3">&quot;small&quot;</span><span class="s0">&gt;</span><span class="s1">编辑</span><span class="s0">&lt;/el-button&gt;</span>
+&lt;/template&gt;
+&lt;/el-table-column&gt;
+&lt;/el-table&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+<span class="s4">export default </span><span class="s1">{</span>
+  methods: {
+    handleClick (row) {
+      console.log(row)
+    }
+  }<span class="s5">,</span>
+  <span class="s1">name: </span><span class="s6">'UM'</span><span class="s5">,</span>
+  <span class="s1">data () {</span>
+    <span class="s4">return </span><span class="s1">{</span>
+      tableData: [{
+        date: <span class="s6">'2016-05-02'</span><span class="s5">,</span>
+        <span class="s1">name: </span><span class="s6">'王小虎'</span><span class="s5">,</span>
+        <span class="s1">province: </span><span class="s6">'上海'</span><span class="s5">,</span>
+        <span class="s1">city: </span><span class="s6">'普陀区'</span><span class="s5">,</span>
+        <span class="s1">address: </span><span class="s6">'上海市普陀区金沙江路 1518 弄'</span><span class="s5">,</span>
+        <span class="s1">zip: </span><span class="s7">200333</span>
+      <span class="s1">}</span><span class="s5">, </span><span class="s1">{</span>
+        date: <span class="s6">'2016-05-04'</span><span class="s5">,</span>
+        <span class="s1">name: </span><span class="s6">'王小虎'</span><span class="s5">,</span>
+        <span class="s1">province: </span><span class="s6">'上海'</span><span class="s5">,</span>
+        <span class="s1">city: </span><span class="s6">'普陀区'</span><span class="s5">,</span>
+        <span class="s1">address: </span><span class="s6">'上海市普陀区金沙江路 1517 弄'</span><span class="s5">,</span>
+        <span class="s1">zip: </span><span class="s7">200333</span>
+      <span class="s1">}</span><span class="s5">, </span><span class="s1">{</span>
+        date: <span class="s6">'2016-05-01'</span><span class="s5">,</span>
+        <span class="s1">name: </span><span class="s6">'王小虎'</span><span class="s5">,</span>
+        <span class="s1">province: </span><span class="s6">'上海'</span><span class="s5">,</span>
+        <span class="s1">city: </span><span class="s6">'普陀区'</span><span class="s5">,</span>
+        <span class="s1">address: </span><span class="s6">'上海市普陀区金沙江路 1519 弄'</span><span class="s5">,</span>
+        <span class="s1">zip: </span><span class="s7">200333</span>
+      <span class="s1">}</span><span class="s5">, </span><span class="s1">{</span>
+        date: <span class="s6">'2016-05-03'</span><span class="s5">,</span>
+        <span class="s1">name: </span><span class="s6">'王小虎'</span><span class="s5">,</span>
+        <span class="s1">province: </span><span class="s6">'上海'</span><span class="s5">,</span>
+        <span class="s1">city: </span><span class="s6">'普陀区'</span><span class="s5">,</span>
+        <span class="s1">address: </span><span class="s6">'上海市普陀区金沙江路 1516 弄'</span><span class="s5">,</span>
+        <span class="s1">zip: </span><span class="s7">200333</span>
+      <span class="s1">}]</span>
+    }
+  }
+}
+<span class="s0">&lt;/script&gt;</span>
+</pre>
+</body>
+</html>

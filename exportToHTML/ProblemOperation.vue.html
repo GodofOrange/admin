@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>ProblemOperation.vue</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #cc7832; font-weight: bold;}
+.s5 { color: #6a8759;}
+.s6 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ProblemOperation.vue</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;template&gt;</span>
+&lt;el-row <span class="s2">class=</span><span class="s3">&quot;tac&quot;</span><span class="s0">&gt;</span>
+&lt;el-col <span class="s2">:span=</span><span class="s3">&quot;</span><span class="s1">3</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+&lt;el-menu
+  <span class="s2">@select=</span><span class="s3">&quot;</span><span class="s1">handleSelect</span><span class="s3">&quot;</span>
+  <span class="s2">default-active=</span><span class="s3">&quot;2&quot;</span>
+  <span class="s2">class=</span><span class="s3">&quot;el-menu-vertical-demo&quot;</span>
+  <span class="s2">background-color=</span><span class="s3">&quot;#545c64&quot;</span>
+  <span class="s2">text-color=</span><span class="s3">&quot;#fff&quot;</span>
+  <span class="s2">active-text-color=</span><span class="s3">&quot;#ffd04b&quot;</span><span class="s0">&gt;</span>
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;1&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">题目定义</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;2&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">类别添加</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;3&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">添加题目主体</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;4&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">题目删除</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;5&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">题目修改</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+&lt;el-menu-item <span class="s2">index=</span><span class="s3">&quot;6&quot;</span><span class="s0">&gt;</span>
+  &lt;i <span class="s2">class=</span><span class="s3">&quot;el-icon-menu&quot;</span><span class="s0">&gt;&lt;/i&gt;</span>
+  &lt;span <span class="s2">slot=</span><span class="s3">&quot;title&quot;</span><span class="s0">&gt;</span><span class="s1">题目浏览</span><span class="s0">&lt;/span&gt;</span>
+&lt;/el-menu-item&gt;
+
+&lt;/el-menu&gt;
+&lt;/el-col&gt;
+&lt;el-col <span class="s2">:span=</span><span class="s3">&quot;</span><span class="s1">16</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+&lt;router-view/&gt;
+&lt;/el-col&gt;
+&lt;el-col <span class="s2">:span=</span><span class="s3">&quot;</span><span class="s1">5</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+  &lt;h4&gt;<span class="s1">温馨提示:</span><span class="s0">&lt;/h4&gt;</span>
+  &lt;p&gt;<span class="s1">因为这个项目做的很仓促，希望大家能够帮我寻bug提建议</span><span class="s0">&lt;/p&gt;</span>
+&lt;/el-col&gt;
+&lt;/el-row&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+<span class="s4">export default </span><span class="s1">{</span>
+  name: <span class="s5">'ProblemOperation'</span><span class="s6">,</span>
+  <span class="s1">methods: {</span>
+    handleSelect (key<span class="s6">, </span><span class="s1">keyPath) {</span>
+      console.log(key)
+      <span class="s4">if </span><span class="s1">(key === </span><span class="s5">'1'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/ADP'</span>
+        <span class="s1">})</span>
+      } <span class="s4">else if </span><span class="s1">(key === </span><span class="s5">'2'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/AC'</span>
+        <span class="s1">})</span>
+      } <span class="s4">else if </span><span class="s1">(key === </span><span class="s5">'3'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/PBI'</span>
+        <span class="s1">})</span>
+      } <span class="s4">else if </span><span class="s1">(key === </span><span class="s5">'4'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/DP'</span>
+        <span class="s1">})</span>
+      } <span class="s4">else if </span><span class="s1">(key === </span><span class="s5">'5'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/PU'</span>
+        <span class="s1">})</span>
+      } <span class="s4">else if </span><span class="s1">(key === </span><span class="s5">'6'</span><span class="s1">) {</span>
+        <span class="s4">this</span><span class="s1">.$router.replace({</span>
+          path: <span class="s5">'/PO/PI'</span>
+        <span class="s1">})</span>
+      }
+    }
+  }
+}
+<span class="s0">&lt;/script&gt;</span>
+
+&lt;style <span class="s2">scoped</span><span class="s0">&gt;</span>
+
+&lt;/style&gt;
+</pre>
+</body>
+</html>
